@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Card with Sorry Box</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #ffe0ec, #fff5f8);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      margin-top: 50px;
+    }
+
+    h1 {
+      color: #ff1493;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .poem {
+      color: #333;
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .cake {
+      position: relative;
+      margin: 0 auto 30px;
+      width: 150px;
+      height: 180px;
+    }
+
+    .layer {
+      position: absolute;
+      width: 150px;
+      height: 40px;
+      border-radius: 8px;
+      background: #ff69b4;
+      left: 0;
+    }
+
+    .layer:nth-child(1) {
+      top: 100px;
+      background: #ffb6c1;
+    }
+
+    .layer:nth-child(2) {
+      top: 60px;
+      background: #ff69b4;
+    }
+
+    .layer:nth-child(3) {
+      top: 20px;
+      background: #ff1493;
+    }
+
+    .candle {
+      position: absolute;
+      top: -30px;
+      left: 65px;
+      width: 20px;
+      height: 30px;
+      background: #927c7c;
+      border-radius: 3px;
+      z-index: 10;
+    }
+
+    .flame {
+      position: absolute;
+      top: -18px;
+      left: 5px;
+      width: 10px;
+      height: 15px;
+      background: gold;
+      border-radius: 50% 50% 50% 50%;
+      animation: flicker 0.5s infinite;
+      box-shadow: 0 0 15px gold;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .footer {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    /* Sorry Box Styles */
+    .sorry-box {
+      width: 200px;
+      height: 100px;
+      background-color: #fff;
+      border: 2px solid #ff80ab;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 1.2em;
+      color: #ff4081;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      padding: 10px;
+      margin: 30px 0;
+    }
+
+    .sorry-box:hover {
+      background-color: #ffeef5;
+    }
+
+    /* Stick it at the bottom */
+    .bottom-box {
+      margin-top: auto;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Birthday Card -->
+  <div class="card">
+    <h1>🎂 Happy Birthday! 🎉</h1><br><br><br><br>
+
+    <div class="cake">
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+    </div>
+
+    <div class="poem">
+      🎈 Today’s your day, so full of cheer,<br>
+      Sending love to someone so dear.<br>
+      May your heart be light, your smile wide,<br>
+      With joy and cake right by your side! 🍰
+    </div>
+
+    <div class="footer"> with love ❤️ by Riddhi</div>
+  </div>
+
+  <!-- Sorry Box at Bottom -->
+  <div class="bottom-box">
+    <div class="sorry-box" onclick="showSorry(this)">
+      Tap me
+    </div>
+  </div>
+
+  <script>
+    function showSorry(element) {
+      element.textContent = "I'm really sorry 😔";
+    }
+  </script>
+
+</body>
+</html>
+
+
+
